@@ -40,7 +40,7 @@ public class ViewOperations {
                 origemAccountId = scann.nextInt();
             } catch (InputMismatchException e) {
                 scann = new Scanner(System.in);
-                LOGGER.error("Valor do ID da conta de origem inválido.");
+                LOGGER.error("Valor do ID da conta de origem inválido. " + e.getMessage(), e);
                 System.err.println("Valor do ID da conta de origem inválido.");
             }
         }
@@ -53,7 +53,7 @@ public class ViewOperations {
                 destinyAccountId = scann.nextInt();
             } catch (InputMismatchException e) {
                 scann = new Scanner(System.in);
-                LOGGER.error("Valor do ID da conta do destinatário inválido.");
+                LOGGER.error("Valor do ID da conta do destinatário inválido. " + e.getMessage(), e);
                 System.err.println("Valor do ID da conta do destinatário inválido.");
             }
         }
@@ -66,7 +66,7 @@ public class ViewOperations {
                 amount = scann.nextDouble();
             } catch (InputMismatchException e) {
                 scann = new Scanner(System.in);
-                LOGGER.error("Valor digitádo é inválido.");
+                LOGGER.error("Valor digitádo é inválido. " + e.getMessage(), e);
                 System.err.println("Valor digitádo é inválido.");
             }
 
@@ -81,7 +81,7 @@ public class ViewOperations {
             transferred = transfer.transfer(origemAccountId, destinyAccountId, amount);
 
         } catch (AccountNotFoundException | InsufficientBalanceException e) {
-            LOGGER.error("Não foi possível realizar a transferência. " + e.getMessage());
+            LOGGER.error("Não foi possível realizar a transferência.  " + e.getMessage(), e);
             System.err.println("Não foi possível realizar a transferência. " + e.getMessage());
         }
 

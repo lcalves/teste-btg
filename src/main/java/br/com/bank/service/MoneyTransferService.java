@@ -11,7 +11,7 @@ import java.math.BigDecimal;
 
 public class MoneyTransferService {
 
-    final static Logger logger = Logger.getLogger(MoneyTransferService.class);
+    private final static Logger LOGGER = Logger.getLogger(MoneyTransferService.class);
 
     private AccountRepository accountRepository = new AccountRepositoryImpl();
 
@@ -22,7 +22,7 @@ public class MoneyTransferService {
         try {
             origemAccount = accountRepository.getAccountById(origemAccountId);
         } catch (AccountNotFoundException e) {
-            logger.error(e.getMessage());
+            LOGGER.error(e.getMessage(), e);
             throw new AccountNotFoundException("Conta de origem não existe.");
 
         }
@@ -31,14 +31,14 @@ public class MoneyTransferService {
         try {
             destinyAccount = accountRepository.getAccountById(destinyAccountId);
         } catch (AccountNotFoundException e) {
-            logger.error(e.getMessage());
+            LOGGER.error(e.getMessage(), e);
             throw new AccountNotFoundException("Conta destinatário não existe.");
         }
 
         try {
             origemAccount.cashOut(amountOperation);
         } catch (InsufficientBalanceException e) {
-            logger.error(e.getMessage());
+            LOGGER.error(e.getMessage(), e);
             throw new InsufficientBalanceException("Saldo insuficiente.");
         }
 
@@ -46,7 +46,7 @@ public class MoneyTransferService {
 
             destinyAccount.cashIn(amountOperation);
         } catch (Exception e) {
-            logger.error(e.getMessage());
+            LOGGER.error(e.getMessage(), e);
             accountRepository.rollback(origemAccount, amountOperation);
             return false;
         }
