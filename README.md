@@ -27,7 +27,19 @@
   Baixe o projeto e abra na IDE e execute a rode a classe Main.
   
   ## Como testar?
-  Basta executar a suíte de testes `br.com.elo7.planetarymission.model.test.PlanetaryMissionTestSuite`
+  Como testes foram criados 3 contas sendo elas da seguinte maneira:
+  - (ID: 1 - Saldo: R$ 20,00)
+  - (ID: 2 - Saldo: R$ 100,00)
+  - (ID: 3 - Saldo: R$ 300,00)
+  - (ID: 4 - Saldo: R$ 0,00)
+  
+  Ao executar a aplicação será exibido um menu de opções para seleção do que o usuário deseja realizar. Esse menu será
+  exibido até que o usuário digite a opção de sair.
+  
+  - *Menu*
+  - 0 - Sair
+  - 1 - Transferir
+  - 2 - Consultar Saldo
   
   ## Tech/Framework utilizado
   - Java 8
