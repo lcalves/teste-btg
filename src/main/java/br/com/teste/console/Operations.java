@@ -41,7 +41,8 @@ public abstract class Operations {
                 accountId = scann.nextInt();
             } catch (InputMismatchException e) {
                 scann = new Scanner(System.in);
-                logger.error("ID da conta inválido.");
+                logger.error("Valor do ID da conta inválido.");
+                System.err.println("Valor do ID da conta inválido.");
             }
         }
 
@@ -71,7 +72,8 @@ public abstract class Operations {
                 origemAccountId = scann.nextInt();
             } catch (InputMismatchException e) {
                 scann = new Scanner(System.in);
-                logger.error("ID da conta inválido.");
+                logger.error("Valor do ID da conta de origem inválido.");
+                System.err.println("Valor do ID da conta de origem inválido.");
             }
         }
 
@@ -83,7 +85,8 @@ public abstract class Operations {
                 destinyAccountId = scann.nextInt();
             } catch (InputMismatchException e) {
                 scann = new Scanner(System.in);
-                logger.error("ID da conta inválido.");
+                logger.error("Valor do ID da conta do destinatário inválido.");
+                System.err.println("Valor do ID da conta do destinatário inválido.");
             }
         }
 
@@ -95,7 +98,8 @@ public abstract class Operations {
                 amount = scann.nextDouble();
             } catch (InputMismatchException e) {
                 scann = new Scanner(System.in);
-                logger.error("ID da conta inválido.");
+                logger.error("Valor digitádo é inválido.");
+                System.err.println("Valor digitádo é inválido.");
             }
 
             if (amountInValid(amount)) {
@@ -109,7 +113,8 @@ public abstract class Operations {
             transferred = transfer.transfer(origemAccountId, destinyAccountId, amount);
 
         } catch (AccountNotFoundException | InsufficientBalanceException e) {
-            logger.error("Não foi possível tranasferir o valor devido a " + e.getMessage());
+            logger.error("Não foi possível realizar a transferência. " + e.getMessage());
+            System.err.println("Não foi possível realizar a transferência. " + e.getMessage());
         }
 
         if (transferred) {

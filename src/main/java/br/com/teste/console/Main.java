@@ -25,6 +25,7 @@ public class Main {
                 Operations.processesOperation(option);
             } catch (InputMismatchException e) {
                 logger.error("Valor Digitado errado.");
+                System.err.println("Valor Digitado erradoa.");
                 scann = new Scanner(System.in);
                 option = 2;
             }
