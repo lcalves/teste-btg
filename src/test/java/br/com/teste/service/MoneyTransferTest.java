@@ -1,8 +1,8 @@
-package br.com.bancobtg.service;
+package br.com.teste.service;
 
-import br.com.bancobtg.db.AccountDB;
-import br.com.bancobtg.exceptions.AccountNotFoundException;
-import br.com.bancobtg.exceptions.InsufficientBalanceException;
+import br.com.teste.db.AccountDB;
+import br.com.teste.exceptions.AccountNotFoundException;
+import br.com.teste.exceptions.InsufficientBalanceException;
 import org.junit.Assert;
 import org.junit.BeforeClass;
 import org.junit.Test;

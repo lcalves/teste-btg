@@ -1,4 +1,4 @@
-package br.com.bancobtg.exceptions;
+package br.com.teste.exceptions;
 
 public class AccountNotFoundException extends RuntimeException {
 

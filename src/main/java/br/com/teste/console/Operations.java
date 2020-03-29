@@ -1,7 +1,9 @@
-package br.com.bancobtg.service;
+package br.com.teste.console;
 
-import br.com.bancobtg.exceptions.AccountNotFoundException;
-import br.com.bancobtg.exceptions.InsufficientBalanceException;
+import br.com.teste.exceptions.AccountNotFoundException;
+import br.com.teste.exceptions.InsufficientBalanceException;
+import br.com.teste.service.MoneyBalance;
+import br.com.teste.service.MoneyTransfer;
 import org.apache.log4j.Logger;
 
 import java.math.BigDecimal;

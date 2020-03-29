@@ -1,9 +1,9 @@
-package br.com.bancobtg.service;
+package br.com.teste.service;
 
-import br.com.bancobtg.exceptions.AccountNotFoundException;
-import br.com.bancobtg.model.Account;
-import br.com.bancobtg.repository.AccountRepository;
-import br.com.bancobtg.repository.impl.AccountRepositoryImpl;
+import br.com.teste.exceptions.AccountNotFoundException;
+import br.com.teste.model.Account;
+import br.com.teste.repository.AccountRepository;
+import br.com.teste.repository.impl.AccountRepositoryImpl;
 import org.apache.log4j.Logger;
 
 import java.math.BigDecimal;

@@ -1,7 +1,7 @@
 package templates;
 
-import br.com.bancobtg.model.Account;
-import br.com.bancobtg.model.AccountSituation;
+import br.com.teste.model.Account;
+import br.com.teste.model.AccountSituation;
 import br.com.six2six.fixturefactory.Rule;
 import br.com.six2six.fixturefactory.loader.TemplateLoader;
 

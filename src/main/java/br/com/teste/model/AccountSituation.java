@@ -1,4 +1,4 @@
-package br.com.bancobtg.model;
+package br.com.teste.model;
 
 public enum AccountSituation {
 
