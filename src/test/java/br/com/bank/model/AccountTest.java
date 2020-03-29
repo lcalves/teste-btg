@@ -1,6 +1,6 @@
-package br.com.teste.model;
+package br.com.bank.model;
 
-import br.com.teste.exceptions.InsufficientBalanceException;
+import br.com.bank.exceptions.InsufficientBalanceException;
 import br.com.six2six.fixturefactory.Fixture;
 import org.junit.Assert;
 import org.junit.BeforeClass;
@@ -32,9 +32,9 @@ public class AccountTest {
     public void cashOutValidTest(){
         Account account = Fixture.from(Account.class).gimme(VALID_ACCOUNT_MODEL);
 
-        account.cashOut(new BigDecimal(50));
+        account.cashOut(new BigDecimal(100));
 
-        Assert.assertEquals(new BigDecimal(50), account.getBalance());
+        Assert.assertEquals(new BigDecimal(0), account.getBalance());
 
     }
 }

@@ -1,7 +1,7 @@
-package br.com.teste.model;
+package br.com.bank.model;
 
-import br.com.teste.db.AccountDB;
-import br.com.teste.exceptions.InsufficientBalanceException;
+import br.com.bank.db.AccountDB;
+import br.com.bank.exceptions.InsufficientBalanceException;
 
 import java.math.BigDecimal;
 import java.util.Objects;
@@ -23,7 +23,7 @@ public class Account {
 
     }
 
-    public void cashIn(BigDecimal value)  {
+    public void cashIn(BigDecimal value) {
 
         this.balance = this.balance.add(value);
 
@@ -40,7 +40,7 @@ public class Account {
     }
 
     public BigDecimal getBalance() {
-        return new BigDecimal(this.balance.doubleValue());
+        return this.balance;
     }
 
     private boolean hasBalanceForOperation(BigDecimal value) {

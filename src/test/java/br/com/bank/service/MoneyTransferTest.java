@@ -1,8 +1,8 @@
-package br.com.teste.service;
+package br.com.bank.service;
 
-import br.com.teste.db.AccountDB;
-import br.com.teste.exceptions.AccountNotFoundException;
-import br.com.teste.exceptions.InsufficientBalanceException;
+import br.com.bank.db.AccountDB;
+import br.com.bank.exceptions.AccountNotFoundException;
+import br.com.bank.exceptions.InsufficientBalanceException;
 import org.junit.Assert;
 import org.junit.BeforeClass;
 import org.junit.Test;
@@ -17,11 +17,11 @@ import static br.com.six2six.fixturefactory.loader.FixtureFactoryLoader.loadTemp
 @RunWith(MockitoJUnitRunner.class)
 public class MoneyTransferTest {
 
-    @InjectMocks
-    private MoneyTransfer moneyTransfer;
+    private MoneyTransfer moneyTransfer = new MoneyTransfer();
 
     @BeforeClass
     public static void before() {
+
         loadTemplates(Templates.BASE_PACKAGE);
     }
 

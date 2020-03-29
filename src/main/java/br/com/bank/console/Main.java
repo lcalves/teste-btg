@@ -1,4 +1,4 @@
-package br.com.teste.console;
+package br.com.bank.console;
 
 import org.apache.log4j.Logger;
 
@@ -7,7 +7,7 @@ import java.util.Scanner;
 
 public class Main {
 
-    final static Logger logger = Logger.getLogger(Main.class);
+    private final static Logger LOGGER = Logger.getLogger(Main.class);
 
     public static void main(String[] args) {
 
@@ -20,14 +20,21 @@ public class Main {
             System.out.println("1 - Transferencia");
             System.out.println("2 - Consultar Saldo");
 
+            ViewOperations viewOperations = new ViewOperations();
+
             try {
+
                 option = scann.nextInt();
-                Operations.processesOperation(option);
-            } catch (InputMismatchException e) {
-                logger.error("Valor Digitado errado.");
-                System.err.println("Valor Digitado erradoa.");
+
+                if (isValidOperation(option)) {
+                    viewOperations.processesOperation(option);
+                }
+
+            } catch (InputMismatchException | IllegalArgumentException e) {
+                LOGGER.error("Valor Digitado errado. " + e.getMessage(), e);
+                System.err.println("Opção invalida. " + "\n" + e.getMessage());
                 scann = new Scanner(System.in);
-                option = 2;
+                option = -1;
             }
 
         } while (option != 0);
@@ -36,9 +43,8 @@ public class Main {
 
     }
 
-
-
-
-
+    private static boolean isValidOperation(int option) {
+        return option == 1 || option == 2;
+    }
 
 }

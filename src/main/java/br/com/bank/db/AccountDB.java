@@ -1,6 +1,6 @@
-package br.com.teste.db;
+package br.com.bank.db;
 
-import br.com.teste.model.Account;
+import br.com.bank.model.Account;
 
 import java.math.BigDecimal;
 import java.util.Arrays;
@@ -8,7 +8,7 @@ import java.util.HashSet;
 import java.util.Set;
 import java.util.concurrent.atomic.AtomicInteger;
 
-public abstract class AccountDB {
+public class AccountDB {
 
     private static AtomicInteger sequenceAccountNumber = new AtomicInteger(355040);
 
@@ -16,7 +16,6 @@ public abstract class AccountDB {
     public static Set<Account> accounts = getAccounts();
 
     public static Integer getSequenceAccountNumber(int agency) {
-
         return sequenceAccountNumber.addAndGet(1);
     }
 
@@ -25,9 +24,6 @@ public abstract class AccountDB {
     }
 
     private static Set<Account> getAccounts() {
-
-        try {
-
 
         if (accounts == null) {
 
@@ -45,9 +41,6 @@ public abstract class AccountDB {
             return new HashSet(Arrays.asList(a1, a2, a3, a4));
         }
 
-        } catch (Exception e) {
-
-        }
         return accounts;
 
     }

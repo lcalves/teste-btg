@@ -1,4 +1,4 @@
-#Teste BANCO BTG
+ # Teste BANCO BTG
 
 *******
  1. [Introdução](#introdução)
@@ -13,11 +13,11 @@
   ## Introdução
   
   Projeto tem por finalizadade realizar a transferência entre duas contas (conta de origem e conta de destino).
-  O projeto é uma aplicação **console** que realiza a transferência do volor diminuindo o saldo da conta da origem e soma o
+  O projeto é uma aplicação **console** que realiza a transferência do valor diminuindo o saldo da conta da origem e soma o
   valor na conta de destino.
   
   ## Regras de negócio 
-  - Valide que conta de origem tenha saldo antes de ser retirado o dinheiro.
+  - Valide que a conta de origem tenha saldo antes de ser retirado o dinheiro.
   
   ## Pré-requisitos
    Necessário Java versão 8 ou superior.
