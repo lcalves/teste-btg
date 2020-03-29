@@ -1,8 +1,8 @@
-package br.com.bancobtg.service;
+package br.com.teste.service;
 
-import br.com.bancobtg.db.AccountDB;
-import br.com.bancobtg.exceptions.AccountNotFoundException;
-import br.com.bancobtg.exceptions.InsufficientBalanceException;
+import br.com.teste.db.AccountDB;
+import br.com.teste.exceptions.AccountNotFoundException;
+import br.com.teste.exceptions.InsufficientBalanceException;
 import org.junit.Assert;
 import org.junit.BeforeClass;
 import org.junit.Test;
@@ -15,10 +15,10 @@ import templates.Templates;
 import static br.com.six2six.fixturefactory.loader.FixtureFactoryLoader.loadTemplates;
 
 @RunWith(MockitoJUnitRunner.class)
-public class MoneyTransferTest {
+public class MoneyTransferServiceTest {
 
     @InjectMocks
-    private MoneyTransfer moneyTransfer;
+    private MoneyTransferService moneyTransferService;
 
     @BeforeClass
     public static void before() {
@@ -31,7 +31,7 @@ public class MoneyTransferTest {
     @Test
     public void validTransferTest() {
 
-        boolean transferred = moneyTransfer.transfer(3, 2, 20);
+        boolean transferred = moneyTransferService.transfer(3, 2, 20);
 
         Assert.assertTrue(transferred);
 
@@ -40,21 +40,21 @@ public class MoneyTransferTest {
     @Test(expected = AccountNotFoundException.class)
     public void transferOrigemAccountNotFounTest() {
 
-        moneyTransfer.transfer(5, 2, 20);
+        moneyTransferService.transfer(5, 2, 20);
 
     }
 
     @Test(expected = AccountNotFoundException.class)
     public void transferDestinyAccountNotFounTest() {
 
-        moneyTransfer.transfer(1, 5, 20);
+        moneyTransferService.transfer(1, 5, 20);
 
     }
 
     @Test(expected = InsufficientBalanceException.class)
     public void transferInsufficientBalanceTest() {
 
-        moneyTransfer.transfer(1, 2, 120);
+        moneyTransferService.transfer(1, 2, 120);
 
     }
 

@@ -1,4 +1,4 @@
-package br.com.bancobtg.console;
+package br.com.teste.console;
 
 import org.apache.log4j.Logger;
 

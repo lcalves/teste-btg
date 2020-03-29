@@ -1,6 +1,6 @@
-package br.com.bancobtg.repository;
+package br.com.teste.repository;
 
-import br.com.bancobtg.model.Account;
+import br.com.teste.model.Account;
 
 import java.math.BigDecimal;
 

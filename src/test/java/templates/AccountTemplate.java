@@ -1,6 +1,6 @@
 package templates;
 
-import br.com.bancobtg.model.Account;
+import br.com.teste.model.Account;
 import br.com.six2six.fixturefactory.Rule;
 import br.com.six2six.fixturefactory.loader.TemplateLoader;
 
@@ -12,8 +12,6 @@ import static br.com.six2six.fixturefactory.Fixture.of;
 public class AccountTemplate implements TemplateLoader {
 
     public static final String VALID_ACCOUNT_MODEL = UUID.randomUUID().toString();
-    public static final String VALID_CONTATO_MODEL = UUID.randomUUID().toString();
-
 
     @Override
     public void load() {
@@ -23,7 +21,6 @@ public class AccountTemplate implements TemplateLoader {
                     add("agency", 1);
                     add("accountNumber", 1);
                     add("balance", new BigDecimal(100));
-
                 }});
     }
 }

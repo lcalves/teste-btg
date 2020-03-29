@@ -1,6 +1,6 @@
-package br.com.bancobtg.db;
+package br.com.teste.db;
 
-import br.com.bancobtg.model.Account;
+import br.com.teste.model.Account;
 
 import java.math.BigDecimal;
 import java.util.Arrays;
@@ -26,9 +26,6 @@ public abstract class AccountDB {
 
     private static Set<Account> getAccounts() {
 
-        try {
-
-
         if (accounts == null) {
 
             Account a1 = new Account(2110);
@@ -45,9 +42,6 @@ public abstract class AccountDB {
             return new HashSet(Arrays.asList(a1, a2, a3, a4));
         }
 
-        } catch (Exception e) {
-
-        }
         return accounts;
 
     }

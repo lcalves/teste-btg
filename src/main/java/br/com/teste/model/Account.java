@@ -1,7 +1,7 @@
-package br.com.bancobtg.model;
+package br.com.teste.model;
 
-import br.com.bancobtg.db.AccountDB;
-import br.com.bancobtg.exceptions.InsufficientBalanceException;
+import br.com.teste.db.AccountDB;
+import br.com.teste.exceptions.InsufficientBalanceException;
 
 import java.math.BigDecimal;
 import java.util.Objects;

@@ -1,8 +1,8 @@
-package br.com.bancobtg.console;
+package br.com.teste.console;
 
-import br.com.bancobtg.exceptions.AccountNotFoundException;
-import br.com.bancobtg.exceptions.InsufficientBalanceException;
-import br.com.bancobtg.service.MoneyTransfer;
+import br.com.teste.exceptions.AccountNotFoundException;
+import br.com.teste.exceptions.InsufficientBalanceException;
+import br.com.teste.service.MoneyTransferService;
 import org.apache.log4j.Logger;
 
 import java.util.InputMismatchException;
@@ -77,7 +77,7 @@ public abstract class Operations {
             }
         }
 
-        MoneyTransfer transfer = new MoneyTransfer();
+        MoneyTransferService transfer = new MoneyTransferService();
 
         try {
             transferred = transfer.transfer(origemAccountId, destinyAccountId, amount);
@@ -92,7 +92,6 @@ public abstract class Operations {
         } else {
             System.out.println("Não foi possível realizar a transferência.");
         }
-
 
     }
 
