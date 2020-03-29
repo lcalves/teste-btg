@@ -4,7 +4,6 @@ import br.com.bancobtg.exceptions.AccountNotFoundException;
 import br.com.bancobtg.exceptions.InsufficientBalanceException;
 import org.apache.log4j.Logger;
 
-import java.math.BigDecimal;
 import java.util.InputMismatchException;
 import java.util.Scanner;
 
@@ -20,38 +19,10 @@ public abstract class Operations {
             case 1:
                 transferOperation();
                 break;
-            case 2:
-                balanceOperation();
+            default:
+                System.err.println("Opção inválida.");
                 break;
-        }
 
-    }
-
-    public static void balanceOperation() {
-
-        int accountId = 0;
-
-        Scanner scann = new Scanner(System.in);
-
-        while (accountId == 0) {
-            try {
-                System.out.println("Digite o ID da conta de origem");
-                accountId = scann.nextInt();
-            } catch (InputMismatchException e) {
-                scann = new Scanner(System.in);
-                logger.error("Valor do ID da conta inválido.");
-                System.err.println("Valor do ID da conta inválido.");
-            }
-        }
-
-        MoneyBalance moneyBalance = new MoneyBalance();
-
-        try {
-            BigDecimal balance = moneyBalance.getBalance(accountId);
-            System.out.printf("Saldo: R$ %.2f\n", balance);
-        } catch (AccountNotFoundException e) {
-            logger.error(e.getMessage());
-            System.err.println("");
         }
 
     }
@@ -116,7 +87,9 @@ public abstract class Operations {
         }
 
         if (transferred) {
-            System.out.println("Transferencia realizada com sucesso.");
+            System.out.println("Transferência realizada com sucesso.");
+        } else {
+            System.out.println("Não foi possível realizar a transferência.");
         }
 
 

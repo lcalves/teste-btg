@@ -1,7 +1,6 @@
 package templates;
 
 import br.com.bancobtg.model.Account;
-import br.com.bancobtg.model.AccountSituation;
 import br.com.six2six.fixturefactory.Rule;
 import br.com.six2six.fixturefactory.loader.TemplateLoader;
 
@@ -23,7 +22,6 @@ public class AccountTemplate implements TemplateLoader {
                     add("id", 1);
                     add("agency", 1);
                     add("accountNumber", 1);
-                    add("accountSituation", AccountSituation.ACTIVE);
                     add("balance", new BigDecimal(100));
 
                 }});

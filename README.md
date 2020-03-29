@@ -39,7 +39,6 @@
   - *Menu*
   - 0 - Sair
   - 1 - Transferir
-  - 2 - Consultar Saldo
   
   ## Tech/Framework utilizado
   - Java 8

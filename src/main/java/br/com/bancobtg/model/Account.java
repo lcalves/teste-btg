@@ -12,18 +12,16 @@ public class Account {
     private int agency;
     private int accountNumber;
     private BigDecimal balance;
-    private AccountSituation accountSituation;
 
     public Account(int agency) {
         this.id = AccountDB.getSequenceAccountId();
         this.agency = agency;
         this.accountNumber = AccountDB.getSequenceAccountNumber(agency);
         this.balance = new BigDecimal(0.00);
-        this.accountSituation = AccountSituation.ACTIVE;
 
     }
 
-    public void cashIn(BigDecimal value)  {
+    public void cashIn(BigDecimal value) {
 
         this.balance = this.balance.add(value);
 
@@ -53,16 +51,8 @@ public class Account {
 
     }
 
-    public void changeAccountSituation(AccountSituation accountSituation) {
-        this.accountSituation = accountSituation;
-    }
-
     public int getId() {
         return id;
-    }
-
-    public AccountSituation getAccountSituation() {
-        return accountSituation;
     }
 
     @Override
@@ -70,15 +60,11 @@ public class Account {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Account account = (Account) o;
-        return agency == account.agency &&
-                accountNumber == account.accountNumber &&
-                Objects.equals(id, account.id) &&
-                Objects.equals(balance, account.balance) &&
-                accountSituation == account.accountSituation;
+        return Objects.equals(id, account.id);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, agency, accountNumber, balance, accountSituation);
+        return Objects.hash(id);
     }
 }
