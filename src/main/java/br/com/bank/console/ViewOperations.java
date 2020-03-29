@@ -1,22 +1,20 @@
-package br.com.teste.console;
+package br.com.bank.console;
 
-import br.com.teste.exceptions.AccountNotFoundException;
-import br.com.teste.exceptions.InsufficientBalanceException;
-import br.com.teste.service.MoneyTransferService;
+import br.com.bank.exceptions.AccountNotFoundException;
+import br.com.bank.exceptions.InsufficientBalanceException;
+import br.com.bank.service.MoneyTransferService;
 import org.apache.log4j.Logger;
 
 import java.util.InputMismatchException;
 import java.util.Scanner;
 
-public abstract class Operations {
+public class ViewOperations {
 
-    final static Logger logger = Logger.getLogger(Operations.class);
+   private final static Logger LOGGER = Logger.getLogger(ViewOperations.class);
 
     public static void processesOperation(int option) {
 
         switch (option) {
-            case 0:
-                break;
             case 1:
                 transferOperation();
                 break;
@@ -42,7 +40,7 @@ public abstract class Operations {
                 origemAccountId = scann.nextInt();
             } catch (InputMismatchException e) {
                 scann = new Scanner(System.in);
-                logger.error("Valor do ID da conta de origem inválido.");
+                LOGGER.error("Valor do ID da conta de origem inválido.");
                 System.err.println("Valor do ID da conta de origem inválido.");
             }
         }
@@ -55,7 +53,7 @@ public abstract class Operations {
                 destinyAccountId = scann.nextInt();
             } catch (InputMismatchException e) {
                 scann = new Scanner(System.in);
-                logger.error("Valor do ID da conta do destinatário inválido.");
+                LOGGER.error("Valor do ID da conta do destinatário inválido.");
                 System.err.println("Valor do ID da conta do destinatário inválido.");
             }
         }
@@ -68,7 +66,7 @@ public abstract class Operations {
                 amount = scann.nextDouble();
             } catch (InputMismatchException e) {
                 scann = new Scanner(System.in);
-                logger.error("Valor digitádo é inválido.");
+                LOGGER.error("Valor digitádo é inválido.");
                 System.err.println("Valor digitádo é inválido.");
             }
 
@@ -83,7 +81,7 @@ public abstract class Operations {
             transferred = transfer.transfer(origemAccountId, destinyAccountId, amount);
 
         } catch (AccountNotFoundException | InsufficientBalanceException e) {
-            logger.error("Não foi possível realizar a transferência. " + e.getMessage());
+            LOGGER.error("Não foi possível realizar a transferência. " + e.getMessage());
             System.err.println("Não foi possível realizar a transferência. " + e.getMessage());
         }
 

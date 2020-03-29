@@ -1,6 +1,6 @@
-package br.com.teste.repository;
+package br.com.bank.repository;
 
-import br.com.teste.model.Account;
+import br.com.bank.model.Account;
 
 import java.math.BigDecimal;
 

@@ -1,6 +1,6 @@
-package br.com.teste.model;
+package br.com.bank.model;
 
-import br.com.teste.exceptions.InsufficientBalanceException;
+import br.com.bank.exceptions.InsufficientBalanceException;
 import br.com.six2six.fixturefactory.Fixture;
 import org.junit.Assert;
 import org.junit.BeforeClass;

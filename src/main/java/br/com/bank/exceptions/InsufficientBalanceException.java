@@ -1,4 +1,4 @@
-package br.com.teste.exceptions;
+package br.com.bank.exceptions;
 
 public class InsufficientBalanceException extends RuntimeException {
 
