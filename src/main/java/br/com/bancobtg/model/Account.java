@@ -27,6 +27,12 @@ public class Account {
 
     }
 
+    /**
+     * Metodo que realiza a retirada de valor do saldo da conta
+     * @param value - valor a ser retirado da conta
+     *     *
+     * @throws InsufficientBalanceException - lancado caso a conta nao tenha saldo suficiente para transacao
+     */
     public void cashOut(BigDecimal value) throws InsufficientBalanceException {
 
         if (hasBalanceForOperation(value)) {
