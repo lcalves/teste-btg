@@ -111,8 +111,8 @@ public abstract class Operations {
             transferred = transfer.transfer(origemAccountId, destinyAccountId, amount);
 
         } catch (AccountNotFoundException | InsufficientBalanceException e) {
-            logger.error("Não foi possível tranasferir o valor devido a " + e.getMessage());
-            System.err.println("Não foi possível tranasferir o valor devido a " + e.getMessage());
+            logger.error("Não foi possível realizar a transferência. " + e.getMessage());
+            System.err.println("Não foi possível realizar a transferência. " + e.getMessage());
         }
 
         if (transferred) {

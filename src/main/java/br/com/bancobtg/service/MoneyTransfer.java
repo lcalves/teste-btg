@@ -39,7 +39,7 @@ public class MoneyTransfer {
             origemAccount.cashOut(amountOperation);
         } catch (InsufficientBalanceException e) {
             logger.error(e.getMessage());
-            throw new InsufficientBalanceException("Você não possuí saldo para realizar a transferência");
+            throw new InsufficientBalanceException("Saldo insuficiente.");
         }
 
         try {
