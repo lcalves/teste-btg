@@ -13,23 +13,23 @@
   ## Introdução
   
   Projeto tem por finalizadade realizar a transferência entre duas contas (conta de origem e conta de destino).
-  O projeto é um projeto **console** que realiza a transferência do volor diminuindo o saldo da conta da origem e soma o
-  valor na conta do destinatário.
+  O projeto é uma aplicação **console** que realiza a transferência do volor diminuindo o saldo da conta da origem e soma o
+  valor na conta de destino.
   
   ## Regras de negócio 
-  - Valide se conta de origem tenha saldo antes de ser retirado o dinheiro
+  - Valide que conta de origem tenha saldo antes de ser retirado o dinheiro.
   
   ## Pré-requisitos
    Necessário Java versão 8 ou superior.
    
   ## Como executar?
   
-  Baixe o projeto e abra na IDE e execute a rode a classe Main.
+  Baixe o projeto, abra em uma IDE e execute a classe Main.
   
   ## Como testar?
-  Como testes foram criados 3 contas sendo elas da seguinte maneira:
-  - (ID: 1 - Saldo: R$ 20,00)
-  - (ID: 2 - Saldo: R$ 100,00)
+  Como testes, foram criados 4 contas sendo elas da seguinte maneira:
+  - (ID: 1 - Saldo: R$ 20,50)
+  - (ID: 2 - Saldo: R$ 150,00)
   - (ID: 3 - Saldo: R$ 300,00)
   - (ID: 4 - Saldo: R$ 0,00)
   
