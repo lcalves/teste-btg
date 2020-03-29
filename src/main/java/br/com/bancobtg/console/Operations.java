@@ -1,7 +1,8 @@
-package br.com.bancobtg.service;
+package br.com.bancobtg.console;
 
 import br.com.bancobtg.exceptions.AccountNotFoundException;
 import br.com.bancobtg.exceptions.InsufficientBalanceException;
+import br.com.bancobtg.service.MoneyTransfer;
 import org.apache.log4j.Logger;
 
 import java.util.InputMismatchException;

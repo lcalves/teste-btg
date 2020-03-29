@@ -1,6 +1,5 @@
-package br.com.bancobtg;
+package br.com.bancobtg.console;
 
-import br.com.bancobtg.service.Operations;
 import org.apache.log4j.Logger;
 
 import java.util.InputMismatchException;
@@ -35,10 +34,5 @@ public class Main {
         scann.close();
 
     }
-
-
-
-
-
 
 }
